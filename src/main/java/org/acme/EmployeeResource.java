@@ -59,13 +59,13 @@ public class EmployeeResource {
     @Transactional
     @DELETE
     @Path("{id}")
-    public Response.Status delete(@PathParam("id") Long id) {
+    public Response delete(@PathParam("id") Long id) {
         Employee entity = Employee.findById(id);
         entity.delete();
         if (entity == null) {
             throw new WebApplicationException("Employee with id of " + id + " does not exist.", 404);
         }
-        return Response.Status.OK;
+        return Response.status(Response.Status.OK).build();
     }
 
     /*
