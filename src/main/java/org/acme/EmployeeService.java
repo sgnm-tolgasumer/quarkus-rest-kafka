@@ -7,6 +7,7 @@ import java.util.List;
 
 @ApplicationScoped
 public class EmployeeService {
+    /*
     public List employees = new ArrayList();
 
     @Inject
@@ -23,5 +24,7 @@ public class EmployeeService {
     public List getAll(){
         return employees;
     }
+
+     */
 
 }
