@@ -1,15 +1,12 @@
 package org.acme;
 
-import java.util.List;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
+import javax.persistence.Entity;
 
-public class Employee {
+@Entity
+public class Employee extends PanacheEntity {
     public String name;
     public int age;
-
-    public Employee(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
 
 }
