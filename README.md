@@ -11,3 +11,5 @@ Quarkus projesini dev modunda çalıştır:
 ```shell script
 mvn quarkus:dev
 ```
+
+Postman collection: `quarkus-rest-kafka.postman_collection.json` 
