@@ -1,4 +1,3 @@
-
 CREATE TABLE EMPLOYEE(id int unsigned not null auto_increment primary key,
 name varchar(30) not null,
 age int unsigned not null);

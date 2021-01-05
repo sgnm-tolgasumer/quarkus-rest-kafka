@@ -11,9 +11,6 @@ import java.util.List;
 public class EmployeeResource {
 
     @Inject
-    EmployeeService employeeService;
-
-    @Inject
     KafkaService kafkaService;
 
     @GET
