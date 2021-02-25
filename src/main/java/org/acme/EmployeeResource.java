@@ -35,7 +35,7 @@ public class EmployeeResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response create(Employee employee) {
         employee.persist();
-        kafkaService.publishAsJson(employee);
+        kafkaService.publishAsJson(employee, 0);
         return Response.status(Response.Status.CREATED).entity(employee).build();
     }
 
@@ -49,7 +49,7 @@ public class EmployeeResource {
         entity.name = employee.name;
         entity.age = employee.age;
         entity.persist();
-        kafkaService.publishAsJson(entity);
+        kafkaService.publishAsJson(entity, 0);
         return entity;
     }
 

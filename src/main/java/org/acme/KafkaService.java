@@ -17,7 +17,11 @@ public class KafkaService {
     @Channel("employees")
     Emitter<String> employeesEmitter;
 
-    public void publishAsJson(Object obj) {
+    @Inject
+    @Channel("customer")
+    Emitter<String> customerEmitter;
+
+    public void publishAsJson(Object obj, int channelId) {
         String objJson = null;
         try {
             objJson = mapper.writeValueAsString(obj);
@@ -25,6 +29,13 @@ public class KafkaService {
             e.printStackTrace();
         }
         // Push created Json to Kafka stream
-        employeesEmitter.send(objJson);
+        //employeesEmitter.send(objJson);
+
+        if(channelId == 0) {
+            employeesEmitter.send(objJson);
+        }
+        else if(channelId == 1){
+            customerEmitter.send(objJson);
+        }
     }
 }
